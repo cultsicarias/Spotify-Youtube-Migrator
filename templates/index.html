@@ -1,0 +1,47 @@
+<!-- templates/index.html -->
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>Spotify → YouTube Migrator</title>
+  <script src="/static/app.js" defer></script>
+  <style>
+    body{font-family: Inter, system-ui, sans-serif; max-width:900px;margin:24px auto;padding:0 12px}
+    button{padding:8px 12px;border-radius:6px}
+    .row{display:flex;gap:8px;align-items:center}
+    .small{font-size:0.9rem;color:#666}
+    pre{background:#f7f7f8;padding:12px;border-radius:6px;overflow:auto}
+  </style>
+</head>
+<body>
+  <h1>Spotify → YouTube Migrator</h1>
+  <p class="small">Login to Spotify, upload browser.json, pick a playlist and hit Transfer.</p>
+
+  <div>
+    <div class="row">
+      <button id="spotify-login">Login with Spotify</button>
+      <button id="refresh-playlists">Load My Playlists</button>
+    </div>
+    <div style="margin-top:8px">
+      <input id="file-input" type="file" />
+      <button id="upload-headers">Upload browser.json</button>
+      <span id="upload-status" class="small"></span>
+    </div>
+  </div>
+
+  <hr/>
+
+  <div>
+    <label for="playlist-select">Choose playlist:</label>
+    <select id="playlist-select" style="width:100%;padding:8px;margin-top:4px"></select>
+    <div style="margin-top:8px" class="row">
+      <button id="transfer-btn">Transfer Selected Playlist</button>
+      <span id="transfer-status" class="small"></span>
+    </div>
+  </div>
+
+  <hr/>
+  <h3>Report</h3>
+  <pre id="report"></pre>
+</body>
+</html>
