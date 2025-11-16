@@ -4,3 +4,4 @@ python-dotenv
 requests
 spotipy
 ytmusicapi
+python-multipart
